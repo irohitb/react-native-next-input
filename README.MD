@@ -36,7 +36,7 @@ where we are capturing the input from the child component in `inputFromChildComp
 
 ```
 inputFromChildComponent = (combinedValueArray, currentValue, refForTheCurrentValue) => {
-		console.log(value)
+			console.log(combinedValueArray, currentValue,  refForTheCurrentValue)
 	}
 ```
 ### Props
