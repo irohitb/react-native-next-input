@@ -1,6 +1,6 @@
 {
   "name": "react-native-next-input",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "dependencies": {
     "prop-types": "^15.7.2"
   },
@@ -15,5 +15,15 @@
     "url": "https://github.com/irohitb/React-Native-Crypto/issues"
   },
   "homepage": "https://github.com/irohitb/React-Native-Crypto#readme",
-  "description": ""
+  "description": "React-native component which will automatically change focus to next input element making it great to use when making OTP screens, pin based login screens or even date of birth component",
+  "keywords": [
+    "react",
+    "native",
+    "keyboard",
+    "textInput",
+    "OTP",
+    "Date Of birth",
+    "DOB", 
+    "next-input"
+  ]
 }

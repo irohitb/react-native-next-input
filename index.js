@@ -19,7 +19,7 @@ class NextTextInput extends PureComponent {
     const { inputValue } = this.state
 		inputValue[index] = value
     await this.setState({inputValue: [...inputValue]})
-    this.props.onChangeValue(this.state.inputValue[index])
+    this.props.onChangeValue(this.state.inputValue, this.state.inputValue[index], this.inputRefs[index])
 		const ref = this.inputRefs[index + 1]
 		if (value && ref && ref.current) ref.current.focus()
   }
