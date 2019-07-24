@@ -51,10 +51,6 @@ inputFromChildComponent = (combinedValueArray, currentValue, refForTheCurrentVal
 | textInputStyle | object | null | No | Styling for your the mapped-input element (the above style of boxes in case of the otp screen) |
 | parentViewStyle | object | null | no | the styling for the parent view under which the input elements are mapped |
 
-
-
-### Real world example 
-
 ### Real World Example Code
 
 <strong> Note: </strong> Here is the [JSX code](https://github.com/irohitb/react-native-next-input/blob/master/example.js) and the [relavent styling](https://github.com/irohitb/react-native-next-input/blob/master/example.stylesheet.js) for the above gif UI. The  code also uses a [react-native-keyboard-view-space](https://www.npmjs.com/package/react-native-keyboard-view-space) to animate opening of keyboard and moving of the component in the screen node module but that it totally optional for you to use it 
