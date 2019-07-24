@@ -1,6 +1,6 @@
 {
   "name": "react-native-next-input",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "dependencies": {
     "prop-types": "^15.7.2"
   },
@@ -23,7 +23,7 @@
     "textInput",
     "OTP",
     "Date Of birth",
-    "DOB", 
+    "DOB",
     "next-input",
     "date"
   ]
