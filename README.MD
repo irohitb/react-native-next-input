@@ -2,6 +2,12 @@
 
 [![NPM](https://nodei.co/npm/react-native-next-input.png?compact=true)](https://nodei.co/npm/react-native-next-input/)
 
+## Versions
+
+### Version 0.10.0
+1. Includes Value Prop to add defualt or exsisting values
+2. Fixed bug not emiiting all the arguments to the parent component
+
 ### Description 
 
 React-native component which will automatically change focus to next input element making it great to use when making OTP screens, pin based login screens or even date of birth component
@@ -50,6 +56,7 @@ inputFromChildComponent = (combinedValueArray, currentValue, refForTheCurrentVal
 | keyboardType | String | numeric | No | Since, this parameter is being passed to `<TextInput`, it supports all the values as mentioned in react-native documentation for TextInput, by default the value is set to numeric |
 | textInputStyle | object | null | No | Styling for your the mapped-input element (the above style of boxes in case of the otp screen) |
 | parentViewStyle | object | null | no | the styling for the parent view under which the input elements are mapped |
+| value | Array | null | No | Array containing default values/or values user might have previously entered in the forn
 
 ### Real World Example Code
 
