@@ -5,7 +5,7 @@
 ## Versions
 
 ### Version 0.10.0
-1. Includes Value Prop to add defualt or exsisting values
+1. Added Value Prop to add defualt or exsisting values
 2. Fixed bug not emiiting all the arguments to the parent component
 
 ### Description 
