@@ -1,7 +1,4 @@
 ## React-Native-Next-Input
-
-[![NPM](https://nodei.co/npm/react-native-next-input.png?compact=true)](https://nodei.co/npm/react-native-next-input/)
-
 |  | Status |
 | - | - |
 | Dependencies | [![Dependencies](https://img.shields.io/david/irohitb/react-native-next-input)](https://david-dm.org/irohitb/react-native-next-input) [![Dev dependencies](https://img.shields.io/david/dev/irohitb/react-native-next-input)](https://david-dm.org/irohitb/react-native-next-input) [![Peer dependencies](https://img.shields.io/david/peer/irohitb/react-native-next-input)](https://david-dm.org/irohitb/rn-formly)|
