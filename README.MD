@@ -2,11 +2,10 @@
 
 [![NPM](https://nodei.co/npm/react-native-next-input.png?compact=true)](https://nodei.co/npm/react-native-next-input/)
 
-## Versions
-
-### Version 0.10.0
-1. Added Value Prop to add defualt or exsisting values
-2. Fixed bug not emiiting all the arguments to the parent component
+|  | Status |
+| - | - |
+| Dependencies | [![Dependencies](https://img.shields.io/david/irohitb/react-native-next-input)](https://david-dm.org/irohitb/react-native-next-input) [![Dev dependencies](https://img.shields.io/david/dev/irohitb/react-native-next-input)](https://david-dm.org/irohitb/react-native-next-input) [![Peer dependencies](https://img.shields.io/david/peer/irohitb/react-native-next-input)](https://david-dm.org/irohitb/rn-formly)|
+| Package | [![npm package version](https://img.shields.io/npm/v/rn-formly)](https://www.npmjs.com/package/react-native-next-input) [![npm downloads](https://img.shields.io/npm/dt/react-native-next-input)](https://www.npmjs.com/package/react-native-next-input)
 
 ### Description 
 
