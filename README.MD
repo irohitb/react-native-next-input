@@ -4,12 +4,16 @@
 | Dependencies | [![Dependencies](https://img.shields.io/david/irohitb/react-native-next-input)](https://david-dm.org/irohitb/react-native-next-input) [![Dev dependencies](https://img.shields.io/david/dev/irohitb/react-native-next-input)](https://david-dm.org/irohitb/react-native-next-input) [![Peer dependencies](https://img.shields.io/david/peer/irohitb/react-native-next-input)](https://david-dm.org/irohitb/rn-formly)|
 | Package | [![npm package version](https://img.shields.io/npm/v/rn-formly)](https://www.npmjs.com/package/react-native-next-input) [![npm downloads](https://img.shields.io/npm/dt/react-native-next-input)](https://www.npmjs.com/package/react-native-next-input)
 
+
 ### Description 
 
 React-native component which will automatically change focus to next input element making it great to use when making OTP screens, pin based login screens or even date of birth component
 
+**Note:** If you like the repo, please give it a star on github
 
  <img src="https://user-images.githubusercontent.com/32276134/61627498-8acc5280-ac9d-11e9-83a6-ab5df15f554e.gif"  width="250" height="500">
+
+
 
 ### Installation 
 
@@ -41,6 +45,45 @@ inputFromChildComponent = (combinedValueArray, currentValue, refForTheCurrentVal
 			console.log(combinedValueArray, currentValue,  refForTheCurrentValue)
 	}
 ```
+
+### Clear Input 
+1. Pass a boolean state set to `false` initally to NextTextInput 
+
+```
+<NextTextInput 
+  noOfTextInput={4}
+  textInputStyle={styles.textBox}
+  onChangeValue={this.inputFromChildComponent}
+  parentViewStyle={styles.textBoxes}
+  clear={this.state.invalid}
+/>
+```
+You can change clear the input by changing the state to `true`
+
+```
+verifyOTP = async () => {
+		try {
+			const currentNumbersEntered = this.state.currentNumbersEntered.join('')
+			if (currentNumbersEntered.length === 6) {
+				await phoneInstance.verifyOtp(currentNumbersEntered )
+				this.props.navigation.navigate('SucessAuth')
+			} else {
+				this.dropDownAlertRef.alertWithType('error', 'Error', frontendErrors.OTP_LENGTH)
+			}
+		} catch (err) {
+			this.setState({invalid: true})
+		}
+	}
+```
+**Note:** Once you have changed the state and the component have rendered, you need to change the `state` back to false else it won't go pass the first input 
+
+```
+	componentDidUpdate () {
+		this.setState({clear: false})
+	}
+```
+
+
 ### Props
 
 | **Prop** | **Type** | **Default** | **Required** | **description** |
@@ -52,9 +95,15 @@ inputFromChildComponent = (combinedValueArray, currentValue, refForTheCurrentVal
 | keyboardType | String | numeric | No | Since, this parameter is being passed to `<TextInput`, it supports all the values as mentioned in react-native documentation for TextInput, by default the value is set to numeric |
 | textInputStyle | object | null | No | Styling for your the mapped-input element (the above style of boxes in case of the otp screen) |
 | parentViewStyle | object | null | no | the styling for the parent view under which the input elements are mapped |
-| value | Array | null | No | Array containing default values/or values user might have previously entered in the forn
+| value | Array | null | No | Array containing default values/or values user might have previously entered in the forn |
+| clear | Boolean | false | No | When `true` it will clear everything in the input boxes and change focus to first box |
+
+
 
 ### Real World Example Code
 
 <strong> Note: </strong> Here is the [JSX code](https://github.com/irohitb/react-native-next-input/blob/master/example.js) and the [relavent styling](https://github.com/irohitb/react-native-next-input/blob/master/example.stylesheet.js) for the above gif UI. The  code also uses a [react-native-keyboard-view-space](https://www.npmjs.com/package/react-native-keyboard-view-space) to animate opening of keyboard and moving of the component in the screen node module but that it totally optional for you to use it 
 
+### Other Examples 
+1. [Example of Date Picker Component](https://github.com/irohitb/rn-formly/blob/master/formComponent/date-time.js)
+2. [Example of OTP Component](https://github.com/irohitb/rn-formly/blob/master/formComponent/otp.js)
