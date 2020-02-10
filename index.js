@@ -3,6 +3,7 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {View, TextInput, StyleSheet} from 'react-native'
+
 class NextTextInput extends PureComponent {
 	constructor(props) {
 		super(props)
@@ -12,7 +13,7 @@ class NextTextInput extends PureComponent {
 			.map(_ => React.createRef())
 		this.value = this.props.value
 		this.state = {
-			inputValue: Array(this.props.noOfTextInput).fill(null).map((value, index) => this.value && this.value[index] !== undefined ? '' + this.value[index] : value)
+			inputValue: Array(noOfRefs).fill(null).map((value, index) => this.value && this.value[index] !== undefined ? '' + this.value[index] : value)
 		}
 	}
 
@@ -28,6 +29,13 @@ class NextTextInput extends PureComponent {
 	}
 
 	render() {
+		const {clearInput} = this.props
+		if (clearInput && this.state.inputValue[0]) {
+			// if clear input is true and there is nothing in the first input 
+			this.state = {inputValue: Array(noOfRefs).fill(null)}
+			this.inputRefs = Array(noOfRefs).fill(0).map(_ => React.createRef())
+		}
+		
 		return (
 			<View
 				style={
@@ -62,13 +70,15 @@ NextTextInput.propTypes = {
 	textInputStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 	onChangeValue: PropTypes.func.isRequired,
 	parentViewStyle: PropTypes.object,
-	value: PropTypes.array
+	value: PropTypes.array, 
+	clearInput: PropTypes.bool
 }
 
 NextTextInput.defaultProps = {
 	displayColum: false,
 	keyboardType: 'numeric',
-	placeholder: []
+	placeholder: [], 
+	clearInput: false
 }
 
 export default NextTextInput
