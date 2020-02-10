@@ -34,14 +34,16 @@ class NextTextInput extends PureComponent {
 		const {clearInput} = this.props
 		let inputValues = false 
 		for (let i = 0; i<this.state.inputValue.length; i++) {
-			if (this.state.inputValue[i])  inputValues = true
+			if (i != 0 && this.state.inputValue[i])  inputValues = true
 			if (inputValues) break
 		}
 		if (clearInput && inputValues) {
 			// if clear input is true and there is nothing in the first input 
 			this.setState({inputValue: Array(this.noOfRefs).fill(null)})
 			const ref = this.inputRefs[0]
-			if (ref && ref.current) ref.current.focus()	
+			if (ref && ref.current) {
+				ref.current.focus()
+			}	
 		}
 	}
 
