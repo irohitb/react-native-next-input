@@ -15,7 +15,7 @@
     "strict": true,
     "target": "esnext",
     "resolveJsonModule": true,
-    "outDir": "./dist",
+    "outDir": "./lib",
     "declaration": true
   }
 }
