@@ -6,13 +6,13 @@ import {View, TextInput, ViewStyle, KeyboardTypeOptions, TextStyle} from 'react-
 
 interface Props {
 	noOfTextInput: number;
-	placeholder: Array<number | string>;
-	displayColum: boolean;
-	keyboardType: KeyboardTypeOptions;
-	textInputStyle: TextStyle,
+	placeholder?: Array<number | string>;
+	displayColum?: boolean;
+	keyboardType?: KeyboardTypeOptions;
+	textInputStyle?: TextStyle,
 	onChangeValue: (a:Array<string>, b: string, inputRefs: number) => void;
-	parentViewStyle: ViewStyle;
-	value: Array<string | number>;
+	parentViewStyle?: ViewStyle;
+	value?: Array<string | number>;
 	clearInput?: boolean;
 	onInputCleared?: (a: boolean) => void
 }
@@ -24,8 +24,6 @@ const defaultProps = {
 	clearInput: false
 }
 const NextTextInput = ({noOfTextInput, placeholder, displayColum, keyboardType, textInputStyle, onChangeValue, parentViewStyle, value, clearInput, onInputCleared}: Props) => {
-		// this.noOfRefs = this.props.noOfTextInput
-	
 	const didMount = React.useRef(false);
 	const lastValue: React.MutableRefObject<string  | null > = React.useRef(null)
 	const lastRef: React.MutableRefObject< number | null> = React.useRef(null)
@@ -50,44 +48,20 @@ const NextTextInput = ({noOfTextInput, placeholder, displayColum, keyboardType, 
 		setInputValues(currentState)
 		lastValue.current = value
 		lastRef.current = index
-		// await this.setState({inputValue: [...inputValue]})
-		// this.props.onChangeValue(this.state.inputValue, this.state.inputValue[index], this.inputRefs[index])
-		// const ref = this.inputRefs[index + 1]
-		// if (value && ref && ref.current && !clearInput) ref.current.focus()
-				
 	}
 
-	// skip on first render and then emit value updwards
-	React.useEffect(() => {
-		if (didMount.current && !clearBoxesInput.current && lastRef.current !== null && lastValue.current !== null){
-			onChangeValue(inputValues, lastValue.current, lastRef.current)
-			const ref = inputRefs[lastRef.current + 1]
-			if (lastValue.current !== '' && ref && ref.current) ref.current.focus() 
-		} else if (clearBoxesInput.current) {
-			clearBoxesInput.current = false
-		} else {
-			didMount.current = true
-		}
-	}, [inputValues])
-
-
-	React.useLayoutEffect(() => {
-			let inputValues = false 
-			for (let i = 0; i<inputValues.length; i++) {
-				if (i != 0 && inputValues[i])  {
-					inputValues = true
-				}
+		// skip on first render and then emit value updwards
+		React.useEffect(() => {
+			if (didMount.current && !clearBoxesInput.current && lastRef.current !== null && lastValue.current !== null){
+				onChangeValue(inputValues, lastValue.current, lastRef.current)
+				const ref = inputRefs[lastRef.current + 1]
+				if (lastValue.current !== '' && ref && ref.current) ref.current.focus() 
+			} else if (clearBoxesInput.current) {
+				clearBoxesInput.current = false
+			} else {
+				didMount.current = true
 			}
-			if (clearInput && inputValues) {
-				// if clear input is true and there is nothing in the first input 
-				setInputValues(Array(noOfTextInput).fill(null))
-				const ref = inputRefs[0]
-				if (ref && ref.current) {
-					ref.current.focus()
-				}	
-			}
-		})
-
+		}, [inputValues])
 
 		return (
 			<View
