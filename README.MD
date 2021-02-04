@@ -64,18 +64,18 @@ You can change clear the input by changing the state to `true`
 ```
 
 verifyOTP = () => {
-		try {
-			if (currentNumbersEntered.length === 4) {
-				phoneInstance.verifyOtp(currentNumbersEntered )
-			
-				props.navigation.navigate('SucessAuth') // Assume this throws error and code goes to catch statement
-			} else {
-				// To display error
-				dropDownAlertRef.alertWithType('error', 'Error', frontendErrors.OTP_LENGTH)
-			}
-		} catch (err) {
-			// Since user entered invalid otp, we decide to clear text in input box
-			setInvalid(true) // this will clear input  
+	try {
+		if (currentNumbersEntered.length === 4) {
+			phoneInstance.verifyOtp(currentNumbersEntered )
+		
+			props.navigation.navigate('SucessAuth') // Assume this throws error and code goes to catch statement
+		} else {
+			// To display error
+			dropDownAlertRef.alertWithType('error', 'Error', frontendErrors.OTP_LENGTH)
+		}
+	} catch (err) {
+		// Since user entered invalid otp, we decide to clear text in input box
+		setInvalid(true) // this will clear input  
 	}
 }
 
