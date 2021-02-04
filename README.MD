@@ -1,7 +1,7 @@
 ## React-Native-Next-Input
 |  | Status |
 | - | - |
-| Dependencies | [![Dependencies](https://img.shields.io/david/irohitb/react-native-next-input)](https://david-dm.org/irohitb/react-native-next-input) [![Dev dependencies](https://img.shields.io/david/dev/irohitb/react-native-next-input)](https://david-dm.org/irohitb/react-native-next-input) [![Peer dependencies](https://img.shields.io/david/peer/irohitb/react-native-next-input)](https://david-dm.org/irohitb/rn-formly)|
+| Dependencies | [![Dependencies](https://img.shields.io/david/blendtale/react-native-next-input)](https://david-dm.org/blendtale/react-native-next-input) [![Dev dependencies](https://img.shields.io/david/dev/blendtale/react-native-next-input)](https://david-dm.org/blendtale/react-native-next-input) [![Peer dependencies](https://img.shields.io/david/peer/blendtale/react-native-next-input)](https://david-dm.org/blendtale/rn-formly)|
 | Package | [![npm package version](https://img.shields.io/npm/v/react-native-next-input)](https://www.npmjs.com/package/react-native-next-input) [![npm downloads](https://img.shields.io/npm/dt/react-native-next-input)](https://www.npmjs.com/package/react-native-next-input)
 
 
