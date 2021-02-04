@@ -13,7 +13,7 @@ interface Props {
   parentViewStyle?: ViewStyle
   value?: Array<string | number>
   clearInput?: boolean
-  onInputCleared?: (a: boolean) => void
+  isInputCleared?: (a: boolean) => any | void
 }
 
 const defaultProps = {
@@ -32,7 +32,7 @@ const NextTextInput = ({
   parentViewStyle,
   value,
   clearInput,
-  onInputCleared
+  isInputCleared
 }: Props) => {
   const didMount = React.useRef(false)
   const lastValue: React.MutableRefObject<string | null> = React.useRef(null)
@@ -52,8 +52,8 @@ const NextTextInput = ({
       setInputValues(Array(noOfTextInput).fill(null))
       // Focus the first element
       const ref = inputRefs[0].current?.focus()
-      if (onInputCleared) {
-        onInputCleared(true)
+      if (isInputCleared) {
+        isInputCleared(true)
       }
     }
   }, [clearInput])

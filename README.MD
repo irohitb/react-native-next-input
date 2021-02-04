@@ -34,7 +34,7 @@ and then use it like this
 <NextTextInput 
   noOfTextInput={4}
   textInputStyle={styles.textBox}
-  onChangeValue={this.inputFromChildComponent}
+  onChangeValue={inputFromChildComponent}
   parentViewStyle={styles.textBoxes}
 />
 ```
@@ -53,35 +53,42 @@ inputFromChildComponent = (combinedValueArray, currentValue, refForTheCurrentVal
 <NextTextInput 
   noOfTextInput={4}
   textInputStyle={styles.textBox}
-  onChangeValue={this.inputFromChildComponent}
+  onChangeValue={inputFromChildComponent}
   parentViewStyle={styles.textBoxes}
-  clear={this.state.invalid}
+  clear={invalid}
+  isInputCleared={isInputCleared}
 />
 ```
 You can change clear the input by changing the state to `true`
 
 ```
-verifyOTP = async () => {
+
+verifyOTP = () => {
 		try {
-			const currentNumbersEntered = this.state.currentNumbersEntered.join('')
-			if (currentNumbersEntered.length === 6) {
-				await phoneInstance.verifyOtp(currentNumbersEntered )
-				this.props.navigation.navigate('SucessAuth')
+			if (currentNumbersEntered.length === 4) {
+				phoneInstance.verifyOtp(currentNumbersEntered )
+			
+				props.navigation.navigate('SucessAuth') // Assume this throws error and code goes to catch statement
 			} else {
-				this.dropDownAlertRef.alertWithType('error', 'Error', frontendErrors.OTP_LENGTH)
+				// To display error
+				dropDownAlertRef.alertWithType('error', 'Error', frontendErrors.OTP_LENGTH)
 			}
 		} catch (err) {
-			this.setState({invalid: true})
-		}
+			// Since user entered invalid otp, we decide to clear text in input box
+			setInvalid(true) // this will clear input  
 	}
-```
-**Note:** Once you have changed the state and the component have rendered, you need to change the `state` back to false else it won't go pass the first input 
+}
+
+inputFromChildComponent = (combinedValueArray, currentValue, refForTheCurrentValue) => {
+	if (clear) {
+		// If you have cleared the state or passed true in clear props, it's recommended that you re-change it to false
+		setClear(false)
+	}
+	console.log(combinedValueArray, currentValue,  refForTheCurrentValue)
+}
 
 ```
-	componentDidUpdate () {
-		this.setState({clear: false})
-	}
-```
+
 
 
 ### Props
@@ -97,7 +104,7 @@ verifyOTP = async () => {
 | parentViewStyle | object | null | no | the styling for the parent view under which the input elements are mapped |
 | value | Array | null | No | Array containing default values/or values user might have previously entered in the forn |
 | clear | Boolean | false | No | When `true` it will clear everything in the input boxes and change focus to first box |
-
+| isInputCleared | function | null | no | this function emits value to parent function passed once the state is cleared |
 
 ### Examples 
 1. [Example of Date Picker Component](https://github.com/blendtale/rn-formly/blob/master/formComponent/date-time.js)
