@@ -99,11 +99,6 @@ verifyOTP = async () => {
 | clear | Boolean | false | No | When `true` it will clear everything in the input boxes and change focus to first box |
 
 
-
-### Real World Example Code
-
-<strong> Note: </strong> Here is the [JSX code](https://github.com/blendtale/react-native-next-input/blob/master/example.js) and the [relavent styling](https://github.com/blendtale/react-native-next-input/blob/master/example.stylesheet.js) for the above gif UI. The  code also uses a [react-native-keyboard-view-space](https://www.npmjs.com/package/react-native-keyboard-view-space) to animate opening of keyboard and moving of the component in the screen node module but that it totally optional for you to use it 
-
-### Other Examples 
+### Examples 
 1. [Example of Date Picker Component](https://github.com/blendtale/rn-formly/blob/master/formComponent/date-time.js)
 2. [Example of OTP Component](https://github.com/blendtale/rn-formly/blob/master/formComponent/otp.js)
