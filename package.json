@@ -4,14 +4,14 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/irohitb/react-native-next-input.git"
+    "url": "git+https://github.com/blendtale/react-native-next-input.git"
   },
   "author": "Rohit Bhatia <irohitbhatia@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/irohitb/react-native-next-input/issues"
+    "url": "https://github.com/blendtale/react-native-next-input/issues"
   },
-  "homepage": "https://github.com/irohitb/react-native-next-input#readme",
+  "homepage": "https://github.com/blendtale/react-native-next-input#readme",
   "description": "React-native component which will automatically change focus to next input element making it great to use when making OTP screens, pin based login screens or even date of birth component",
   "keywords": [
     "react",
