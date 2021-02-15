@@ -44,7 +44,7 @@ const NextTextInput = ({
   const [inputValues, setInputValues] = React.useState(
     Array(noOfTextInput)
       .fill(null)
-      .map((val, index) => (value && value[index] !== undefined ? '' + value[index] : val))
+      .map((val, index) => (value && value[index] !== undefined ? `${value[index]}` : val))
   )
 
   React.useEffect(() => {
@@ -92,10 +92,11 @@ const NextTextInput = ({
           : [{ display: 'flex', flexDirection: 'row' }, parentViewStyle]
       }
     >
-      {inputRefs.map((element, index) => (
+      {inputRefs.map((element, index) => {
+        return (
         <TextInput
           key={index}
-          placeholder={`${placeholder![index]}`}
+          placeholder={`${placeholder && placeholder[index] ? placeholder[index]  : ''}`}
           value={inputValues[index]}
           maxLength={1}
           keyboardType={keyboardType}
@@ -104,7 +105,7 @@ const NextTextInput = ({
           numberOfLines={1}
           onChangeText={(text) => onChangeHandler(text, index)}
         />
-      ))}
+      )})}
     </View>
   )
 }
