@@ -10,10 +10,10 @@ interface Props {
     parentViewStyle?: ViewStyle;
     value?: Array<string | number>;
     clearInput?: boolean;
-    onInputCleared?: (a: boolean) => void;
+    isInputCleared?: (a: boolean) => any | void;
 }
 declare const NextTextInput: {
-    ({ noOfTextInput, placeholder, displayColum, keyboardType, textInputStyle, onChangeValue, parentViewStyle, value, clearInput, onInputCleared }: Props): JSX.Element;
+    ({ noOfTextInput, placeholder, displayColum, keyboardType, textInputStyle, onChangeValue, parentViewStyle, value, clearInput, isInputCleared }: Props): JSX.Element;
     defaultProps: {
         displayColum: boolean;
         keyboardType: string;

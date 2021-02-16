@@ -94,18 +94,19 @@ const NextTextInput = ({
     >
       {inputRefs.map((element, index) => {
         return (
-        <TextInput
-          key={index}
-          placeholder={`${placeholder && placeholder[index] ? placeholder[index]  : ''}`}
-          value={inputValues[index]}
-          maxLength={1}
-          keyboardType={keyboardType}
-          style={textInputStyle}
-          ref={inputRefs[index]}
-          numberOfLines={1}
-          onChangeText={(text) => onChangeHandler(text, index)}
-        />
-      )})}
+          <TextInput
+            key={index}
+            placeholder={`${placeholder && placeholder[index] ? placeholder[index] : ''}`}
+            value={inputValues[index]}
+            maxLength={1}
+            keyboardType={keyboardType}
+            style={textInputStyle}
+            ref={inputRefs[index]}
+            numberOfLines={1}
+            onChangeText={(text) => onChangeHandler(text, index)}
+          />
+        )
+      })}
     </View>
   )
 }
