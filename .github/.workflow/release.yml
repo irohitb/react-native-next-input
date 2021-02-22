@@ -1,0 +1,25 @@
+name: Node CI
+on:
+  push:
+    branches:
+      - master
+jobs:
+  release:
+    name: Build, test, and release
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install dependencies
+        run: npm ci
+      - name: Build TypeScript
+        run: npm run build
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.BLENDTALE_GITHUB_BOT }}
+          NPM_TOKEN: ${{ secrets.NPM_ROHIT }}
+        run: npx semantic-release
