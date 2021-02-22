@@ -16,22 +16,17 @@ interface Props {
   isInputCleared?: (a: boolean) => any | void
 }
 
-const defaultProps = {
-  displayColum: false,
-  keyboardType: 'numeric',
-  placeholder: [],
-  clearInput: false
-}
+
 const NextTextInput = ({
   noOfTextInput,
-  placeholder,
-  displayColum,
-  keyboardType,
+  placeholder = [],
+  displayColum = false,
+  keyboardType = 'numeric',
   textInputStyle,
   onChangeValue,
   parentViewStyle,
   value,
-  clearInput,
+  clearInput=false,
   isInputCleared
 }: Props) => {
   const didMount = React.useRef(false)
@@ -110,7 +105,5 @@ const NextTextInput = ({
     </View>
   )
 }
-
-NextTextInput.defaultProps = defaultProps
 
 export default NextTextInput
