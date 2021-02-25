@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { View, TextInput, ViewStyle, KeyboardTypeOptions, TextStyle } from 'react-native'
 
-interface Props {
+export interface NextInputProps {
   noOfTextInput: number
   placeholder?: Array<number | string>
   displayColum?: boolean
@@ -16,7 +16,6 @@ interface Props {
   isInputCleared?: (a: boolean) => any | void
 }
 
-
 const NextTextInput = ({
   noOfTextInput,
   placeholder = [],
@@ -26,9 +25,9 @@ const NextTextInput = ({
   onChangeValue,
   parentViewStyle,
   value,
-  clearInput=false,
+  clearInput = false,
   isInputCleared
-}: Props) => {
+}: NextInputProps) => {
   const didMount = React.useRef(false)
   const lastValue: React.MutableRefObject<string | null> = React.useRef(null)
   const lastRef: React.MutableRefObject<number | null> = React.useRef(null)
