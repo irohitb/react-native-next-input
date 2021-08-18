@@ -1,6 +1,6 @@
 {
   "name": "react-native-next-input",
-  "version": "0.10.7",
+  "version": "0.10.8",
   "main": "lib/index.js",
   "types": "lib",
   "scripts": {
