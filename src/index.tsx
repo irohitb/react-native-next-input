@@ -8,7 +8,7 @@ export interface NextInputProps {
   placeholder?: Array<number | string>
   displayColum?: boolean
   keyboardType?: KeyboardTypeOptions
-  textInputStyle?: TextStyle
+  textInputStyle?: TextStyle | Array<TextStyle>
   onChangeValue: (a: Array<string>, b: string, inputRefs: number) => void
   parentViewStyle?: ViewStyle
   value?: Array<string | number>
